@@ -53,9 +53,9 @@ public class MyAdapter extends BaseAdapter implements ListAdapter {
         name.setText(list.get(position).getName());
         descrip.setText(list.get(position).getShortDescription());
         try {
-            FirebaseHelper.setImage(ava,"prm391/fpt1.jpg");
-            ava.getLayoutParams().height = 100;
-            ava.getLayoutParams().width = 100;
+            FirebaseHelper.setImage(ava,list.get(position).getAvatar());
+//            ava.getLayoutParams().height = 500;
+//            ava.getLayoutParams().width = 100;
         }catch (Exception e){
             ava.setImageResource(R.drawable.error);
 

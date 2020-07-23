@@ -54,7 +54,7 @@ public class SchoolDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_school_detail);
         initialize();
-
+        getSchoolInformation();
     }
     private void initialize(){
         viewFlipper = findViewById(R.id.school_detail_viewFlipper);
@@ -76,13 +76,8 @@ public class SchoolDetail extends AppCompatActivity {
     public void getSchoolInformation(){
         Intent intent=getIntent();
         school= (School) intent.getSerializableExtra("school");
-        getDataFromFireBase(school.getCode());
         toolbar.setTitle(school.getCode());
-        name.setText(school.getName());
-        FirebaseHelper.setViewFlipperResource(this, viewFlipper, school.getPictures());
-        location.setText(school.getLocation());
-        desription.setText(school.getFullDescription());
-
+        getDataFromFireBase(school.getCode());
     }
     public void getDataFromFireBase(String code) {
         try {
@@ -94,13 +89,19 @@ public class SchoolDetail extends AppCompatActivity {
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
                             if (task.isSuccessful()) {
                                 for (QueryDocumentSnapshot doc : task.getResult()) {
-                                    school.setName(doc.get("name").toString());
-                                    school.setCode(doc.get("code").toString());
-                                    school.setAvatar(doc.get("avatar").toString());
-                                    school.setShortDescription(doc.get("shortDescription").toString());
-                                    school.setFullDescription(doc.get("fullDescription").toString());
-                                    school.setLocation(doc.get("location").toString());
-                                    school.setPictures((ArrayList<String>) doc.get("picture"));
+//                                    school.setName(doc.get("name").toString());
+//                                    school.setCode(doc.get("code").toString());
+//                                    school.setAvatar(doc.get("avatar").toString());
+//                                    school.setShortDescription(doc.get("shortDescription").toString());
+//                                    school.setFullDescription(doc.get("fullDescription").toString());
+//                                    school.setLocation(doc.get("location").toString());
+//                                    school.setPictures((ArrayList<String>) doc.get("picture"));
+//
+
+                                    name.setText(doc.get("name").toString());
+                                    FirebaseHelper.setViewFlipperResource(SchoolDetail.this, viewFlipper, (ArrayList<String>) doc.get("picture"));
+                                    location.setText(doc.get("location").toString());
+                                    desription.setText(doc.get("fullDescription").toString());
                                 }
                             } else {
                                 Log.w("Error", "Error getting documents.", task.getException());
