@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_school">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="fu.prm391.finalproject.school4u.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_school"
+        android:name="fu.prm391.finalproject.school4u.ui.school.SchoolFragment"
+        android:label="@string/title_school"
+        tools:layout="@layout/fragment_school" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="fu.prm391.finalproject.school4u.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_forums"
+        android:name="fu.prm391.finalproject.school4u.ui.forum.ForumsFragment"
+        android:label="@string/title_forums"
+        tools:layout="@layout/fragment_forums" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="fu.prm391.finalproject.school4u.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_add_forum"
+        android:name="fu.prm391.finalproject.school4u.ui.forum.AddForumFragment"
+        android:label="@string/title_add_forum"
+        tools:layout="@layout/fragment_add_forum" />
 </navigation>

@@ -70,14 +70,6 @@ public class SchoolDetail extends AppCompatActivity {
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
                             if (task.isSuccessful()) {
                                 for (QueryDocumentSnapshot doc : task.getResult()) {
-//                                    school.setName(doc.get("name").toString());
-//                                    school.setCode(doc.get("code").toString());
-//                                    school.setAvatar(doc.get("avatar").toString());
-//                                    school.setShortDescription(doc.get("shortDescription").toString());
-//                                    school.setFullDescription(doc.get("fullDescription").toString());
-//                                    school.setLocation(doc.get("location").toString());
-//                                    school.setPictures((ArrayList<String>) doc.get("picture"));
-//
                                     getSupportActionBar().setTitle(doc.get("code").toString());
                                     name.setText(doc.get("name").toString());
                                     FirebaseHelper.setViewFlipperResource(SchoolDetail.this, viewFlipper, (ArrayList<String>) doc.get("picture"));

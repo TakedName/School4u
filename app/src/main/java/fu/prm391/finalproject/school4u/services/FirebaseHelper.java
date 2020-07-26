@@ -22,7 +22,7 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
-import fu.prm391.finalproject.school4u.adapters.MyAdapter;
+
 import fu.prm391.finalproject.school4u.data.School;
 
 public class FirebaseHelper {

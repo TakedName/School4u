@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">School4u</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_school">Schools</string>
+    <string name="title_forums">Forums</string>
+    <string name="title_add_forum">Add Forum</string>
 </resources>

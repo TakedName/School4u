@@ -12,7 +12,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import fu.prm391.finalproject.school4u.ui.login.Login;
+import fu.prm391.finalproject.school4u.ui.authen.Login;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         mAuth = FirebaseAuth.getInstance();
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
+                R.id.navigation_school, R.id.navigation_forums, R.id.navigation_add_forum)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
