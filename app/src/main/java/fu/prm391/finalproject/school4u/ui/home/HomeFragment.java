@@ -86,39 +86,6 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    public void getDataDemoData() {
-        ArrayList<String> img = new ArrayList<>();
-        img.add("https://s3.gaming-cdn.com/images/products/4361/orig/sword-art-online-alicization-lycoris-cover.jpg");
-        img.add("https://salt.tikicdn.com/cache/w390/ts/product/fb/73/28/9bacd3e64b6bfbd2b4eb59798b5db965.jpg");
-        img.add("https://znews-photo.zadn.vn/w660/Uploaded/lce_uxlcq/2020_06_08/kirito_lqm.jpg");
-        img.add("https://image.thanhnien.vn/660/uploaded/vietthong/2020_07_01/thumb2_vntp.jpg");
-        schools.add(new School("fpt1", "fpt", "Đại học", "700512", "Khu Giáo dục và Đào tạo - Khu Công nghệ cao Hòa Lạc - Km29 Đại lộ Thăng Long, Thạch Thất, TP.Hà Nội",
-                " String shortDescription", "String fullDescription", img, null));
-        schools.add(new School("fpt2", "fpt", "Đại học", "700512", "Khu Giáo dục và Đào tạo - Khu Công nghệ cao Hòa Lạc - Km29 Đại lộ Thăng Long, Thạch Thất, TP.Hà Nội",
-                " String shortDescription", "String fullDescription", img, null));
-        schools.add(new School("fpt3", "fpt", "Đại học", "700512", "Khu Giáo dục và Đào tạo - Khu Công nghệ cao Hòa Lạc - Km29 Đại lộ Thăng Long, Thạch Thất, TP.Hà Nội",
-                " String shortDescription", "String fullDescription", img, null));
-        schools.add(new School("fpt3", "fpt", "Đại học", "700512", "Khu Giáo dục và Đào tạo - Khu Công nghệ cao Hòa Lạc - Km29 Đại lộ Thăng Long, Thạch Thất, TP.Hà Nội",
-                " String shortDescription", "String fullDescription", img, null));
-        schools.add(new School("fpt4", "fpt", "Đại học", "700512", "Khu Giáo dục và Đào tạo - Khu Công nghệ cao Hòa Lạc - Km29 Đại lộ Thăng Long, Thạch Thất, TP.Hà Nội",
-                " String shortDescription", "String fullDescription", img, null));
-        schools.add(new School("fpt5", "fpt", "Đại học", "700512", "Khu Giáo dục và Đào tạo - Khu Công nghệ cao Hòa Lạc - Km29 Đại lộ Thăng Long, Thạch Thất, TP.Hà Nội",
-                " String shortDescription", "String fullDescription", img, null));
-        schools.add(new School("fpt6", "fpt", "Đại học", "700512", "Khu Giáo dục và Đào tạo - Khu Công nghệ cao Hòa Lạc - Km29 Đại lộ Thăng Long, Thạch Thất, TP.Hà Nội",
-                " String shortDescription", "String fullDescription", img, null));
-        schools.add(new School("fpt7", "fpt", "Đại học", "700512", "Khu Giáo dục và Đào tạo - Khu Công nghệ cao Hòa Lạc - Km29 Đại lộ Thăng Long, Thạch Thất, TP.Hà Nội",
-                " String shortDescription", "String fullDescription", img, null));
-        schools.add(new School("fpt8", "fpt", "Đại học", "700512", "Khu Giáo dục và Đào tạo - Khu Công nghệ cao Hòa Lạc - Km29 Đại lộ Thăng Long, Thạch Thất, TP.Hà Nội",
-                " String shortDescription", "String fullDescription", img, null));
-        schools.add(new School("fpt9", "fpt", "Đại học", "700512", "Khu Giáo dục và Đào tạo - Khu Công nghệ cao Hòa Lạc - Km29 Đại lộ Thăng Long, Thạch Thất, TP.Hà Nội",
-                " String shortDescription", "String fullDescription", img, null));
-        schools.add(new School("fpt10", "fpt", "Đại học", "700512", "Khu Giáo dục và Đào tạo - Khu Công nghệ cao Hòa Lạc - Km29 Đại lộ Thăng Long, Thạch Thất, TP.Hà Nội",
-                " String shortDescription", "String fullDescription", img, null));
-        MyAdapter adapter = new MyAdapter(schools, getContext());
-        listView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
-    }
-
     public void getDataFromFireBase() {
         try {
             new Thread(new Runnable() {

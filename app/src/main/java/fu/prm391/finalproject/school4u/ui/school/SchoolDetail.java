@@ -1,42 +1,23 @@
 package fu.prm391.finalproject.school4u.ui.school;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import android.content.Intent;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageSwitcher;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ViewFlipper;
-import android.widget.ViewSwitcher;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.squareup.picasso.Picasso;
-
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Timer;
-import java.util.TimerTask;
-
 import fu.prm391.finalproject.school4u.MainActivity;
 import fu.prm391.finalproject.school4u.R;
-import fu.prm391.finalproject.school4u.adapters.MyAdapter;
 import fu.prm391.finalproject.school4u.data.School;
 import fu.prm391.finalproject.school4u.services.FirebaseHelper;
 
@@ -54,7 +35,6 @@ public class SchoolDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_school_detail);
         initialize();
-        getSchoolInformation();
     }
     private void initialize(){
         viewFlipper = findViewById(R.id.school_detail_viewFlipper);
@@ -62,6 +42,7 @@ public class SchoolDetail extends AppCompatActivity {
         desription = findViewById(R.id.school_detail_description);
         location = findViewById(R.id.school_detail_location);
         name = findViewById(R.id.school_detail_name);
+        getSchoolInformation();
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -97,7 +78,7 @@ public class SchoolDetail extends AppCompatActivity {
 //                                    school.setLocation(doc.get("location").toString());
 //                                    school.setPictures((ArrayList<String>) doc.get("picture"));
 //
-
+                                    getSupportActionBar().setTitle(doc.get("code").toString());
                                     name.setText(doc.get("name").toString());
                                     FirebaseHelper.setViewFlipperResource(SchoolDetail.this, viewFlipper, (ArrayList<String>) doc.get("picture"));
                                     location.setText(doc.get("location").toString());

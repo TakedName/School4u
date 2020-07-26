@@ -12,13 +12,14 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import fu.prm391.finalproject.school4u.R;
+import fu.prm391.finalproject.school4u.data.Forum;
 import fu.prm391.finalproject.school4u.data.School;
 import fu.prm391.finalproject.school4u.services.FirebaseHelper;
 
-public class MyAdapter extends BaseAdapter implements ListAdapter {
-    private ArrayList<School> list = new ArrayList<School>();
+public class ForumAdapter extends BaseAdapter implements ListAdapter {
+    private ArrayList<Forum> list = new ArrayList<Forum>();
     private Context context;
-    public MyAdapter(ArrayList<School> list, Context context) {
+    public ForumAdapter(ArrayList<Forum> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -42,23 +43,12 @@ public class MyAdapter extends BaseAdapter implements ListAdapter {
         View view = convertView;
         if (view == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.layout_school, null);
+            view = inflater.inflate(R.layout.layout_forum, null);
         }
-        //Handle TextView and display string from your list
-        TextView name = (TextView)view.findViewById(R.id.school_name);
-        TextView descrip = (TextView)view.findViewById(R.id.school_short_descrip);
-        ImageView ava = (ImageView) view.findViewById(R.id.ava);
-        name.setText(list.get(position).getName());
-        descrip.setText(list.get(position).getShortDescription());
-        try {
-            FirebaseHelper.setImage(ava,list.get(position).getAvatar());
-//            ava.getLayoutParams().height = 500;
-//            ava.getLayoutParams().width = 100;
-        }catch (Exception e){
-            ava.setImageResource(R.drawable.error);
-
-        }
-        //Handle buttons and add onClickListenerss
+        TextView name = (TextView)view.findViewById(R.id.userName);
+        TextView content = (TextView)view.findViewById(R.id.content);
+        name.setText(list.get(position).getAuthorName());
+        content.setText(list.get(position).getContent());
         return view;
     }
 }
