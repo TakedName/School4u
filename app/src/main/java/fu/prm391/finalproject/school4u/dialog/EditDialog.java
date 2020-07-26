@@ -51,6 +51,7 @@ public class EditDialog extends AppCompatDialogFragment{
                     }
                 });
         content= view.findViewById(R.id.edit_content);
+        content.setText(oldContent);
         return builder.create();
     }
 

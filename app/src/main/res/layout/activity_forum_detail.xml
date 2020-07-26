@@ -10,7 +10,7 @@
         android:id="@+id/cardView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="566dp"
+        android:layout_marginBottom="14dp"
         android:padding="20dp"
         app:cardElevation="5dp"
         app:cardUseCompatPadding="true"
@@ -46,49 +46,53 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <ListView
-        android:id="@+id/comment_list"
-        android:layout_width="397dp"
-        android:layout_height="545dp"
-        android:layout_marginBottom="12dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/commnent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        android:divider="@android:color/transparent">
-
-    </ListView>
-
-    <EditText
-        android:id="@+id/commnent"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="16dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/comment_list" />
-
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="60dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="56dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="11dp"
         android:onClick="addComment"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/comment_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/commnent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
         app:srcCompat="@android:drawable/ic_menu_send" />
+
+    <EditText
+        android:id="@+id/commnent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Your comment"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/comment_list"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ListView
+        android:id="@+id/comment_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="16dp"
+        android:divider="@android:color/transparent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+    </ListView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
